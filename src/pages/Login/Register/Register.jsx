@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const Login = () => {
+const Register = () => {
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -11,8 +11,21 @@ const Login = () => {
     }
     return (
         <div className="w-2/4 mx-auto my-20">
-            <h2 className="text-center text-3xl font-bold">Log in</h2>
+            <h2 className="text-center text-3xl font-bold">Sign Up</h2>
             <form onSubmit={handleLogin} className="space-y-5">
+                {/* name input */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Email</span>
+                    </label>
+                    <input type="email" name="email" placeholder="xyz@gmail.com" className="px-3 py-1 border rounded border-black" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Email</span>
+                    </label>
+                    <input type="email" name="email" placeholder="xyz@gmail.com" className="px-3 py-1 border rounded border-black" />
+                </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
@@ -32,4 +45,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
