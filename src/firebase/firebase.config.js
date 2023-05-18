@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.APIKEY,
-  authDomain: import.meta.env.AUTHDOMAIN,
-  projectId: import.meta.env.PROJECTID,
-  storageBucket: import.meta.env.STORAGEBUCKET,
-  messagingSenderId: import.meta.env.MESSAGINGSENDERID,
-  appId: import.meta.env.APPID
+  apiKey: "AIzaSyBHXPI3P5E0n6BYKTKiGEsz3y70L11LClw",
+  authDomain: "gactoys-e4d7a.firebaseapp.com",
+  projectId: "gactoys-e4d7a",
+  storageBucket: "gactoys-e4d7a.appspot.com",
+  messagingSenderId: "840920660699",
+  appId: "1:840920660699:web:52694b10aa4aec4978aafe"
 };
 
 // Initialize Firebase
