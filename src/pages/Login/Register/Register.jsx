@@ -36,28 +36,28 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" name="name" placeholder="Your Name" className="px-3 py-1 border rounded border-black" />
+                    <input type="text" name="name" placeholder="Your Name" className="px-3 py-1 border rounded border-black" required/>
                 </div>
                 {/* photo url input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Photo URL</span>
                     </label>
-                    <input type="text" name="photo" placeholder="Photo Url" className="px-3 py-1 border rounded border-black" />
+                    <input type="text" name="photo" placeholder="Photo Url" className="px-3 py-1 border rounded border-black" required/>
                 </div>
                 {/* email input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
-                    <input type="email" name="email" placeholder="xyz@gmail.com" className="px-3 py-1 border rounded border-black" />
+                    <input type="email" name="email" placeholder="xyz@gmail.com" className="px-3 py-1 border rounded border-black" required/>
                 </div>
                 {/* password input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type="password" name="password" placeholder="******" className="px-3 py-1 border rounded border-black" />
+                    <input type="password" name="password" placeholder="******" className="px-3 py-1 border rounded border-black" required/>
                 </div>
                 <input className="btn btn-block bg-[#0D70D1] hover:bg-[#0b4d8e]" type="submit" value="Register" />
                 <p>Already have an account? <Link to='/login' className="text-red-500">log in</Link></p>

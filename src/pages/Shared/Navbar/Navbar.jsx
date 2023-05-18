@@ -7,7 +7,6 @@ const Navbar = () => {
 
     // authcontext api
     const { logOut, user } = useContext(AuthContext);
-    console.log(user)
 
     const handleLogOut = () => {
         logOut()
@@ -46,7 +45,7 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                
+            {user && <img className="rounded-full w-9 mr-5" src={user?.photoURL} alt="" />}
                 {user ? <Link to='/login' onClick={() => handleLogOut()} className="bg-[#0D70D1] px-4 py-1 text-white font-semibold">logOut</Link> :
                 <Link to='/login' className="bg-[#0D70D1] px-4 py-1 text-white font-semibold">Login</Link>}
             </div>

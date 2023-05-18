@@ -3,21 +3,26 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content">
-            <div>
-                <img className="w-40" src="https://i.ibb.co/mqF2Gv4/Gonow-Logo.png" alt="" />
-                <p>GAC GONOW LTD<br />Gac Gonow Copyright @2023</p>
-            </div>
-            <div>
-                <span className="footer-title">Social</span>
-                <div className="grid grid-flow-col gap-4">
-                    <Link><FaFacebook className="text-4xl"/></Link>
-                    <Link><FaInstagram className="text-4xl"/></Link>
-                    <Link><FaYoutube className="text-4xl"/></Link>
-
+            <div className="">
+                <footer className="footer p-10 bg-neutral text-neutral-content">
+                <div>
+                    <img className="w-32" src="https://i.ibb.co/mqF2Gv4/Gonow-Logo.png" alt="" />
+                    <p>GAC GONOW Company Ltd</p>
                 </div>
+                <div>
+                    <span className="footer-title">Details</span>
+                    <Link to='/aboutus'>About Us</Link>
+                    <Link to='/blog'>Blog</Link>
+                </div>
+                <div>
+                    <span className="footer-title">Social</span>
+                    <a className="link link-hover">Terms of use</a>
+                    <a className="link link-hover">Privacy policy</a>
+                    <a className="link link-hover">Cookie policy</a>
+                </div>
+            </footer>
+            <p className="text-center"><small>Copyright 2023@ Design and Develop by GAC</small></p>
             </div>
-        </footer>
     );
 };
 
