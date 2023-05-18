@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><Link to='/blog'>Blogs</Link></li>
     </>
     return (
-        <div className="navbar lg:px-32 bg-[#B6EAFA]">
+        <div className="navbar">
 
             <div className="navbar-start hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -31,7 +31,7 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <Link to='/login' className="bg-[#EF4444] px-4 py-1 text-white font-semibold">Login</Link>
+                <Link to='/login' className="bg-[#0D70D1] px-4 py-1 text-white font-semibold">Login</Link>
             </div>
         </div>
     );
