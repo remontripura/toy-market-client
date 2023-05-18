@@ -27,11 +27,11 @@ const Navbar = () => {
                         {navItem}
                     </ul>
                 </div>
-                <Link to='/'><img className="w-20" src="https://i.ibb.co/TPQnyP7/6159-Edukit-Logo-Development-FA-no-strapline.png" alt="" /></Link>
+                <Link to='/'><img className="w-20" src="https://i.ibb.co/mqF2Gv4/Gonow-Logo.png" alt="" /></Link>
             </div>
 
             <div className="navbar-end">
-                <Link to='/login' className="bg-[#FF55BB] px-4 py-1 text-white font-semibold">Login</Link>
+                <Link to='/login' className="bg-[#EF4444] px-4 py-1 text-white font-semibold">Login</Link>
             </div>
         </div>
     );
