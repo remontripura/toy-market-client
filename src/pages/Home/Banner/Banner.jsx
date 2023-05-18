@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div className="carousel w-full h-auto">
             <div id="slide1" className="carousel-item relative w-full">
-                <img src="https://i.ibb.co/pjk4bzk/car-removebg-preview-1.png" className="w-full" />
+                <img src="https://i.ibb.co/JsC93sV/green-easter-car-with-eggs-copy-space-removebg-preview.png" className="w-full" />
                 <div className="absolute transform -translate-y-1/2 left-1/2 top-1/2 w-1/5/4 lg:space-y-6">
                     <p className="lg:text-3xl font-semibold font-serif">big fan for kids?</p>
                     <p className="font-bold lg:text-7xl">A world to Explore</p>
