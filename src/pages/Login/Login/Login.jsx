@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 
@@ -8,6 +8,11 @@ const Login = () => {
 
     // function from contex api
     const { logIn, googleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || "/";
 
 
     // collect data from form
@@ -20,6 +25,7 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 console.log(error)
