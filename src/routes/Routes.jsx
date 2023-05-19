@@ -9,6 +9,7 @@ import Blog from "../pages/Blog/Blog";
 import AddToy from "../pages/AddToy/AddToy";
 import AllToy from "../pages/AllToys/AllToy";
 import View from "../pages/Shared/View/View";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/view/:id',
-                element: <View></View>,
+                element: <PrivateRoute><View></View></PrivateRoute>,
                loader: ({params}) => fetch(`http://localhost:5000/allgacdata/${params.id}`)
             }
         ]
