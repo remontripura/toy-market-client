@@ -8,6 +8,7 @@ import Register from "../pages/Login/Register/Register";
 import Blog from "../pages/Blog/Blog";
 import AddToy from "../pages/AddToy/AddToy";
 import AllToy from "../pages/AllToys/AllToy";
+import View from "../pages/Shared/View/View";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
                 path: '/alltoys',
                 element: <AllToy></AllToy>,
                 loader: () => fetch('http://localhost:5000/allgacdata')
+            },
+            {
+                path: '/view/:id',
+                element: <View></View>,
+               loader: ({params}) => fetch(`http://localhost:5000/allgacdata/${params.id}`)
             }
         ]
     },
