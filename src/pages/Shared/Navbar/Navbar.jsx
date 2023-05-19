@@ -24,7 +24,7 @@ const Navbar = () => {
         <li><Link to='/blog'>Blogs</Link></li>
     </>
     return (
-        <div className="navbar">
+        <div className="navbar bg-white">
 
             <div className="navbar-start hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

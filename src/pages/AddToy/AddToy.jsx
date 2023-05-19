@@ -12,31 +12,45 @@ const AddToy = () => {
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const description = form.description.value;
-        console.log(name, seller, email, category, price, rating, quantity, description)
+        const photo = form.photo.value;
+        const allData = { name, seller, email, category, price, rating, quantity, description, photo }
+        console.log(allData)
+        fetch('http://localhost:5000/allgacdata', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(allData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
     }
     return (
-        <form onSubmit={handleAddToy}>
+        <form onSubmit={handleAddToy} className="my-10 space-y-5 px-5">
+            <h2 className="text-center text-4xl font-semibold">Add Toy Field</h2>
             <div className="grid lg:grid-cols-2 gap-6">
                 {/* name input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" name="name" placeholder="Your Name" className="px-3 py-1 border rounded border-black" required />
+                    <input type="text" name="name" placeholder="Your Name" className="px-3 py-1 border rounded border-black" />
                 </div>
                 {/* seller name input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Seller Name</span>
                     </label>
-                    <input type="text" name="seller" placeholder="Your Name" className="px-3 py-1 border rounded border-black" required />
+                    <input type="text" name="seller" placeholder="Your Name" className="px-3 py-1 border rounded border-black" />
                 </div>
                 {/* seller email input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
-                    <input type="email" name="email" placeholder="Your Name" className="px-3 py-1 border rounded border-black" required />
+                    <input type="email" name="email" placeholder="Your Name" className="px-3 py-1 border rounded border-black" />
                 </div>
                 {/* sub category input */}
                 <div className="form-control">
@@ -44,9 +58,10 @@ const AddToy = () => {
                         <span className="label-text">Category</span>
                     </label>
                     <select name="category" className="select select-bordered">
-                        <option disabled selected>sports car</option>
+                        <option>sports</option>
                         <option>truck</option>
-                        <option>mini fire truck</option>
+                        <option>fire-truck</option>
+                        <option>police-car</option>
                     </select>
                 </div>
                 {/* price input */}
@@ -54,31 +69,37 @@ const AddToy = () => {
                     <label className="label">
                         <span className="label-text">Price</span>
                     </label>
-                    <input type="text" name="price" placeholder="Price" className="px-3 py-1 border rounded border-black" required />
+                    <input type="text" name="price" placeholder="Price" className="px-3 py-1 border rounded border-black" />
                 </div>
                 {/* rating input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Rating</span>
                     </label>
-                    <input type="number" name="rating" placeholder="Ratings" className="px-3 py-1 border rounded border-black" required />
+                    <input type="number" name="rating" placeholder="Ratings" className="px-3 py-1 border rounded border-black" />
                 </div>
                 {/* quantity input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Quantity</span>
                     </label>
-                    <input type="text" name="quantity" placeholder="Quantity" className="px-3 py-1 border rounded border-black" required />
+                    <input type="text" name="quantity" placeholder="Quantity" className="px-3 py-1 border rounded border-black" />
                 </div>
                 {/* description input */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
-                    <input type="text" name="description" placeholder="Description" className="px-3 py-1 border rounded border-black" required />
+                    <input type="text" name="description" placeholder="Description" className="px-3 py-1 border rounded border-black" />
                 </div>
-                <input className="btn btn-block bg-[#0D70D1] hover:bg-[#0b4d8e]" type="submit" value="Add Toy" />
             </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Photo Url</span>
+                </label>
+                <input type="text" name="photo" placeholder="Photo Url" className="px-3 py-1 border rounded border-black" />
+            </div>
+            <input className="btn btn-block bg-[#0D70D1] hover:bg-[#0b4d8e]" type="submit" value="Add Toy" />
         </form>
     );
 };
