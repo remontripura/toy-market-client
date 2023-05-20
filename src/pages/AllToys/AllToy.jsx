@@ -4,7 +4,6 @@ import AllToyCard from "./AllToyCard";
 
 const AllToy = () => {
     const toys = useLoaderData();
-    console.log(toys)
     return (
         <div>
             <h2 className="text-4xl font-semibold text-center">All Toys</h2>

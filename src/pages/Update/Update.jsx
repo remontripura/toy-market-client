@@ -2,8 +2,8 @@ import { useLoaderData } from "react-router-dom";
 
 const Update = () => {
 
-
     const data = useLoaderData();
+    console.log(data)
     const { price, quantity, description, _id } = data;
 
     const handleUpdate = event => {
@@ -13,9 +13,8 @@ const Update = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const updateData = { price, quantity, description }
-        console.log(updateData)
 
-        fetch(`http://localhost:5000/allgacdata/${_id}`, {
+        fetch(`http://localhost:5000/viewing/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -24,7 +23,7 @@ const Update = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                alert('Update Successfuly')
             })
     }
     return (

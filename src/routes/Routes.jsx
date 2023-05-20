@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
 import Main from "../Layouts/Main";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login/Login";
@@ -17,7 +16,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        // errorElement: <Error></Error>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -47,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path: '/view/:id',
                 element: <PrivateRoute><View></View></PrivateRoute>,
-               loader: ({params}) => fetch(`http://localhost:5000/allgacdata/${params.id}`)
+               loader: ({params}) => fetch(`http://localhost:5000/viewing/${params.id}`)
             },
             {
                 path: '/mytoys',
@@ -56,7 +55,7 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: ({params}) => fetch(`http://localhost:5000/allgacdata/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/viewing/${params.id}`)
             }
         ]
     },

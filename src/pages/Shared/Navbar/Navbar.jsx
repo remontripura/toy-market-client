@@ -19,8 +19,8 @@ const Navbar = () => {
     const navItem = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/alltoys'>All Toys</Link></li>
-        <li><Link to='/mytoys'>My Toys</Link></li>
-        <li><Link to='/addtoy'>Add A Toy</Link></li>
+        {user && <li><Link to='/mytoys'>My Toys</Link></li>}
+        {user && <li><Link to='/addtoy'>Add A Toy</Link></li>}
         <li><Link to='/blog'>Blogs</Link></li>
     </>
     return (
