@@ -11,6 +11,7 @@ import AllToy from "../pages/AllToys/AllToy";
 import View from "../pages/Shared/View/View";
 import PrivateRoute from "./PrivateRoute";
 import MyToys from "../pages/MyToys/MyToys";
+import Update from "../pages/Update/Update";
 
 const router = createBrowserRouter([
     {
@@ -53,7 +54,9 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
             },
             {
-                
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: ({params}) => fetch(`http://localhost:5000/allgacdata/${params.id}`)
             }
         ]
     },
