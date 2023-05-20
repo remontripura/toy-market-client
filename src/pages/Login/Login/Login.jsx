@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
@@ -8,12 +8,12 @@ const Login = () => {
 
     // function from contex api
     const { logIn, googleSignIn } = useContext(AuthContext);
+    const [error, setError] = useState();
+
+    
     const location = useLocation();
-
     const navigate = useNavigate();
-
     const from = location.state?.from?.pathname || "/";
-
 
     // collect data from form
     const handleLogin = event => {
@@ -25,10 +25,12 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                navigate(from, {replace: true})
+                navigate(from, { replace: true })
+                form.reset();
+                setError();
             })
             .catch(error => {
-                console.log(error)
+                setError(error.message)
             })
     }
 
@@ -53,8 +55,9 @@ const Login = () => {
                     <input type="password" name="password" placeholder="******" className="px-3 py-1 border rounded border-black" required />
                 </div>
                 <input className="btn btn-block bg-[#0D70D1] hover:bg-[#0b4d8e]" type="submit" value="Log in" />
-                <button className="mx-auto text-4xl p-1" onClick={handleGoogleSignIn}><FaGoogle /></button>
+                <button className="text-4xl p-1" onClick={handleGoogleSignIn}><FaGoogle /></button>
                 <p>You don't have an account? <Link to='/register' className="text-red-500">Please Sign Up</Link></p>
+                <p className="text-red-500"><small>{error}</small></p>
             </form>
         </div>
     );

@@ -1,0 +1,34 @@
+.MyTabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Adjust the height as needed */
+  }
+  
+  .TabList {
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .Tab {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .Tab:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .Tab:focus {
+    outline: none;
+  }
+  
+  .TabPanel {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
