@@ -7,7 +7,7 @@ const MyToys = () => {
     const { user, loading } = useContext(AuthContext);
     const [mytoys, setMyToy] = useState();
     useEffect(() => {
-        fetch(`http://localhost:5000/mygacdata/${user?.email}`)
+        fetch(`https://toy-market-server-puce.vercel.app/mygacdata/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 if (loading) {
@@ -18,7 +18,7 @@ const MyToys = () => {
     }, [user])
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://toy-market-server-puce.vercel.app/delete/${id}`, {
             method: 'DELETE',
 
         })

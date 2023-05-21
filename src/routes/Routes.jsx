@@ -41,12 +41,12 @@ const router = createBrowserRouter([
             {
                 path: '/alltoys',
                 element: <AllToy></AllToy>,
-                loader: () => fetch('http://localhost:5000/allgacdata')
+                loader: () => fetch('https://toy-market-server-puce.vercel.app/allgacdata')
             },
             {
                 path: '/view/:id',
                 element: <PrivateRoute><View></View></PrivateRoute>,
-               loader: ({params}) => fetch(`http://localhost:5000/viewing/${params.id}`)
+               loader: ({params}) => fetch(`https://toy-market-server-puce.vercel.app/viewing/${params.id}`)
             },
             {
                 path: '/mytoys',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: ({params}) => fetch(`http://localhost:5000/viewing/${params.id}`)
+                loader: ({params}) => fetch(`https://toy-market-server-puce.vercel.app/viewing/${params.id}`)
             }
         ]
     },

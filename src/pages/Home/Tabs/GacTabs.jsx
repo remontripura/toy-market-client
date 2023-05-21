@@ -13,7 +13,7 @@ const GacTabs = () => {
     const [allData, setAllData] = useState([])
   const [activeTab, setActiveTab] = useState('sports');
     useEffect(() => {
-        fetch(`http://localhost:5000/allgacdata/${activeTab}`)
+        fetch(`https://toy-market-server-puce.vercel.app/allgacdata/${activeTab}`)
             .then(res => res.json())
             .then(data => {
                 setAllData(data)

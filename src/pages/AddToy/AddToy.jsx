@@ -14,7 +14,7 @@ const AddToy = () => {
         const description = form.description.value;
         const photo = form.photo.value;
         const allData = { name, seller, email, category, price, rating, quantity, description, photo }
-        fetch('http://localhost:5000/allgacdata', {
+        fetch('https://toy-market-server-puce.vercel.app/allgacdata', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -24,6 +24,7 @@ const AddToy = () => {
             .then(res => res.json())
             .then(data => {
                 form.reset();
+                alert('Added Successfully')
             })
     }
     return (
@@ -35,7 +36,7 @@ const AddToy = () => {
                     <label className="label">
                         <span className="label-text">Toy Name</span>
                     </label>
-                    <input type="text" name="name" placeholder="Your Name" className="px-3 py-1 border rounded border-black" required/>
+                    <input type="text" name="name" placeholder="Toy Name" className="px-3 py-1 border rounded border-black" required/>
                 </div>
                 {/* seller name input */}
                 <div className="form-control">
