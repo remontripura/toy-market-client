@@ -1,9 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import AllToyCard from "./AllToyCard";
+import useTitle from "../../Hooks/UseTitle";
 
 
 const AllToy = () => {
+    // load data from route
     const toys = useLoaderData();
+
+    // dynami title
+    useTitle('All-Toys')
     return (
         <div>
             <h2 className="text-4xl font-semibold text-center">All Toys</h2>

@@ -1,6 +1,9 @@
+import useTitle from "../../Hooks/UseTitle";
 
 
 const Blog = () => {
+    // Dynami Title
+    useTitle('Blog')
     return (
         <div className="space-y-20 my-10">
             <h2 className="text-5xl text-center font-semibold">Blog Post</h2>

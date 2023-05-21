@@ -1,11 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToysCard from "./MyToysCard";
+import useTitle from "../../Hooks/UseTitle";
 
 
 const MyToys = () => {
     const { user, loading } = useContext(AuthContext);
     const [mytoys, setMyToy] = useState();
+
+    // Dynami Title
+    useTitle('My-Toys')
     useEffect(() => {
         fetch(`https://toy-market-server-puce.vercel.app/mygacdata/${user?.email}`)
             .then(res => res.json())

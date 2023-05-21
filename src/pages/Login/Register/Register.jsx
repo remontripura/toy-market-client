@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import useTitle from "../../../Hooks/UseTitle";
 
 
 const Register = () => {
+    // Dynami Title
+    useTitle('Register')
 
     // auth context
     const { createUser } = useContext(AuthContext);

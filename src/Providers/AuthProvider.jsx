@@ -31,19 +31,18 @@ const AuthProvider = ({ children }) => {
     }
 
     // sign in with google
-        // login with google account
-   const googleSignIn = () => {
-    setLoading(true)
-    return signInWithPopup(auth, provider)
-    .then(result => {
-        const user = result.user;
-        console.log(user)
-    })
-    .catch(error => {
-        console.log(error)
-    })
-   }
-
+    // login with google account
+    const googleSignIn = () => {
+        setLoading(true)
+        return signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
     // observe auth state change
     useEffect(() => {

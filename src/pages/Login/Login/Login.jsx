@@ -2,15 +2,14 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
-
+import useTitle from "../../../Hooks/UseTitle";
 
 const Login = () => {
 
     // function from contex api
     const { logIn, googleSignIn } = useContext(AuthContext);
     const [error, setError] = useState();
-
-    
+    useTitle("Login")
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
@@ -28,6 +27,8 @@ const Login = () => {
                 navigate(from, { replace: true })
                 form.reset();
                 setError();
+                alert('login success')
+                
             })
             .catch(error => {
                 setError(error.message)
