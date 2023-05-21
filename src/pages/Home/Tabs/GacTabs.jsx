@@ -20,8 +20,6 @@ const GacTabs = () => {
             })
     }, [activeTab])
 
-    // const result = allData.filter(data => data.category == activeTab)
-    // console.log(result)
 
     const handleTab = tabName => {
         setActiveTab(tabName)
